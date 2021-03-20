@@ -326,7 +326,7 @@ class Triang():
         '''This function finds the rotation matrix R and the translation matrix t using corresponding points and a given camera matrix.'''
         pts_1 = np.array(self.ptsL, dtype=np.float) #Convert points to float
         pts_2 = np.array(self.ptsR, dtype=np.float)
-        if self.essential_matrix:
+        if self.essential_matrix != []:
         	poseval, self.R, self.t, mask = cv.recoverPose(self.essential_matrix, pts_1, pts_2, self.camera_matrix, 0.4) #Find image's pose using corresponding points, the essential matrix, the camera matrix and a ratio.
         else:
         	poseval, self.R, self.t, mask = cv.recoverPose(self.fundamental_matrix, pts_1, pts_2, self.camera_matrix, 0.4)
