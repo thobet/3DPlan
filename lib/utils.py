@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import os
 import cv2 as cv
 import numpy as np
-from sdxf import sdxf
+import sdxf
 import sys
 from pathlib import Path
 import datetime
