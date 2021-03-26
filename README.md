@@ -2,7 +2,7 @@
 
 
 ## Overview:
-
+<p align="justify">
 The 3DPlan algorithm was developed during my diploma thesis, entitled "Automated detection of edges in point clouds using semantic information", 
 at the School of Rural and Surveying Engineering of the National Technical University of Athens, which is available at https://dspace.lib.ntua.gr/xmlui/handle/123456789/53090.
 
@@ -18,7 +18,7 @@ For this purpose three approaches were developed.
 
 Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into points of each edge. 
 Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest is produced as "3DPlan.dxf".
-
+</p>
 
 ## Dependencies:
 
