@@ -22,10 +22,10 @@ Finally, each segment of points is vectorized and thus, the approximated 3D plan
 
 ## Dependencies:
 
-numpy == 1.19.2 \n
-opencv-python == 3.4.8.29 \n
-dxf == 1.1.1 \n
-pathlib == 1.0.1 \n
+numpy == 1.19.2<br>
+opencv-python == 3.4.8.29<br>
+dxf == 1.1.1
+pathlib == 1.0.1
 imutils == 0.5.3
 metashape == 0.0.4 (Optional for the approach numb. 3)
 Pillow == 7.0.0
