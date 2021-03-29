@@ -32,7 +32,7 @@ scikit-image == 0.17.2 <br>
           The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing
           the edge semantic information.
           The live-editor begins and the user modifies Canny's parameters. When the user is satisfied by the detected
-          edges press the Q button.
+          edges, he presses the Q button to terminate the editing procedure.
           Then the 4D image is produced automatically and saved into "images" directory which is created automatically.
           This procedure is executed for each RGB image.
 </pre>
