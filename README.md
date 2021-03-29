@@ -34,23 +34,22 @@ scikit-image == 0.17.2<br>
 
 ## How to use:
 <p>
-    1) Clone/Download the 3DPlan master.
-    2) Add the RGB images into "rgb" directory.
-    3) Edge semantic information.
-        3.1) Available:
-            Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
-            The semantic channels must be named as "rgbimagename_l.jpg"
-            For example: RGB image --> 4G0R6560.JPG
-                         semantic channel --> 4G0R6560_l.jpg
-        3.2) Not available:
-            The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing 
-            the edge semantic infromation.
-            The live-editor begins and the user modifies the Canny's parameters. When the user is satisfied by the detected
-            edges, presses the Q button.
-            Then the 4D image is produced automatically, and saved into "images" directory which is created automatically.
-            This procedure is executed for each RGB image.
+    1) Clone/Download the 3DPlan master. <br>
+    2) Add the RGB images into "rgb" directory. <br>
+    3) Edge semantic information. <br>
+        3.1) Available:<br>
+            Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.<br>
+            The semantic channels must be named as "rgbimagename_l.jpg"<br>
+            For example: RGB image --> 4G0R6560.JPG<br>
+                         semantic channel --> 4G0R6560_l.jpg<br>
+        3.2) Not available:<br>
+            The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing<br>
+            the edge semantic infromation.<br>
+            The live-editor begins and the user modifies the Canny's parameters. When the user is satisfied by the detected<br>
+            edges, presses the Q button.<br>
+            Then the 4D image is produced automatically, and saved into "images" directory which is created automatically.<br>
+            This procedure is executed for each RGB image.<br>
 </p>
-
 
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
