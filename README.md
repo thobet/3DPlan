@@ -8,15 +8,15 @@ For this purpose, three approaches were developed. 1) Using the OpenSfM software
 Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest is produced as "3DPlan.dxf".
 
 ## Dependencies
-numpy == 1.19.2
-opencv-python == 3.4.8.29
-dxf == 1.1.1
-pathlib == 1.0.1
-imutils == 0.5.3
-metashape == 0.0.4 (Optional for the approach numb. 3)
-Pillow == 7.0.0
-sklearn == 0.0
-scikit-image == 0.17.2
+numpy == 1.19.2 <br>
+opencv-python == 3.4.8.29 <br>
+dxf == 1.1.1 <br>
+pathlib == 1.0.1 <br>
+imutils == 0.5.3 <br>
+metashape == 0.0.4 (Optional for the approach numb. 3) <br>
+Pillow == 7.0.0 <br>
+sklearn == 0.0 <br>
+scikit-image == 0.17.2 <br>
 
 ## How to use
 1) Clone/Download the 3DPlan master.
