@@ -3,7 +3,6 @@
 
 ## Overview:
 <dl>
-    <dt>textAlign(str)</dt>
     <dd>
         <dl>
             <dt>justify</dt>
