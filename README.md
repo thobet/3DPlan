@@ -35,6 +35,7 @@ scikit-image == 0.17.2 <br>
           edges press the Q button. <br>
           Then the 4D image is produced automatically and saved into "images" directory which is created automatically. <br>
           This procedure is executed for each RGB image. <br>
-</p>        
+</p>
+
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
