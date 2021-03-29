@@ -42,8 +42,10 @@ scikit-image == 0.17.2<br>
             For example: RGB image --> 4G0R6560.JPG
                          semantic channel --> 4G0R6560_l.jpg
         3.2) Not available:
-            The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing the edge semantic infromation.
-            The live-editor begins and the user modifies the Canny's parameters. When the user is satisfied by the detected edges, presses the Q button.
+            The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing 
+            the edge semantic infromation.
+            The live-editor begins and the user modifies the Canny's parameters. When the user is satisfied by the detected
+            edges, presses the Q button.
             Then the 4D image is produced automatically, and saved into "images" directory which is created automatically.
             This procedure is executed for each RGB image.
 
