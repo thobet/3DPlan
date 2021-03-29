@@ -19,6 +19,7 @@ sklearn == 0.0 <br>
 scikit-image == 0.17.2 <br>
 
 ## How to use
+<p>
 1) Clone/Download the 3DPlan master.
 2) Add the RGB images into "rgb" directory.
 3) Edge semantic information.
@@ -34,6 +35,6 @@ scikit-image == 0.17.2 <br>
           edges press the Q button. <br>
           Then the 4D image is produced automatically and saved into "images" directory which is created automatically. <br>
           This procedure is executed for each RGB image. <br>
-        
+</p>        
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
