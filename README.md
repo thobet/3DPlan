@@ -27,7 +27,7 @@ scikit-image == 0.17.2 <br>
           Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
           The semantic channels must be named as "rgbimagename_l.jpg"
           For example: RGB image --> 4G0R6560.JPG
-                     semantic channel --> 4G0R6560_l.jpg
+                       semantic channel --> 4G0R6560_l.jpg
     3.2) Not available:
           The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing
           the edge semantic information.
