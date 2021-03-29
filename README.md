@@ -20,10 +20,10 @@ scikit-image == 0.17.2 <br>
 
 ## How to use
 <p>
-1) Clone/Download the 3DPlan master.
-2) Add the RGB images into "rgb" directory.
-3) Edge semantic information.
-    3.1) Available:
+1) Clone/Download the 3DPlan master.<br>
+2) Add the RGB images into "rgb" directory.<br>
+3) Edge semantic information.<br>
+    3.1) Available:<br>
           Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory. <br>
           The semantic channels must be named as "rgbimagename_l.jpg" <br>
           For example: RGB image --> 4G0R6560.JPG <br>
