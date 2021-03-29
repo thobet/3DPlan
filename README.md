@@ -33,6 +33,7 @@ scikit-image == 0.17.2<br>
 
 
 ## How to use:
+<p>
     1) Clone/Download the 3DPlan master.
     2) Add the RGB images into "rgb" directory.
     3) Edge semantic information.
@@ -48,7 +49,7 @@ scikit-image == 0.17.2<br>
             edges, presses the Q button.
             Then the 4D image is produced automatically, and saved into "images" directory which is created automatically.
             This procedure is executed for each RGB image.
-
+</p>
 
 
 ## License
