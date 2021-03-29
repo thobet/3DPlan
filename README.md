@@ -33,10 +33,21 @@ scikit-image == 0.17.2<br>
 
 
 ## How to use:
+    1) Clone/Download the 3DPlan master.
+    2) Add the RGB images into "rgb" directory.
+    3) Edge semantic information.
+        3.1) Available:
+            Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
+            The semantic channels must be named as "rgbimagename_l.jpg"
+            For example: RGB image --> 4G0R6560.JPG
+                         semantic channel --> 4G0R6560_l.jpg
+        3.2) Not available:
+            The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing the edge semantic infromation.
+            The live-editor begins and the user modifies the Canny's parameters. When the user is satisfied by the detected edges, presses the Q button.
+            Then the 4D image is produced automatically, and saved into "images" directory which is created automatically.
+            This procedure is executed for each RGB image.
 
-The RGB images must be stored into "rgb" directory.
 
-The semantic information channel, for each image, must be stored into "semantic_images" directory.
 
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
