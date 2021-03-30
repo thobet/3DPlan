@@ -51,9 +51,9 @@ scikit-image == 0.17.2 <br>
           This procedure is executed for each RGB image.
           (Nothing to do right now, go to step 4)
 4) Execute the "3DPlan.py".
+</pre>
 
 ## During the execution
-
 (Question 1) DD:MM:YY Hr:Mins:Sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".
 (Question 2) DD:MM:YY Hr:Mins:Sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):
           Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
@@ -64,8 +64,6 @@ scikit-image == 0.17.2 <br>
                 On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape interface. When the
                 dense point cloud is produced the user must save it into the "Lines" directory, which is produced automatically, as "merged.txt".
 (Question 3) DD:MM:YY Hr:Mins:Sec,
-
-</pre>
 
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
