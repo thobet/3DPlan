@@ -62,8 +62,9 @@ scikit-image == 0.17.2 <br>
             (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
                 Select how you will apply the Agisoft-Metashape pipeline. 
                 The python-module choice executes the pipeline automatically.
-                On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape interface. When the
-                dense point cloud is produced the user must save it into the "Lines" directory, which is produced automatically, as "merged.txt".
+                On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape interface. 
+                When the dense point cloud is produced the user must save it into the "Lines" directory, which is produced 
+                automatically, as "merged.txt".
 (Question 3) DD:MM:YY Hr:Mins:Sec,
 </pre>
 
