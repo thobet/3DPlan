@@ -72,26 +72,27 @@ and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff'
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
 ## Examples
-Line detection using manually annotateed images and the Agisoft-Metashape software.<br>
-The two images which were inserted into the "rgb" directory:<br>
+<h3>Line detection using manually annotateed images and the Agisoft-Metashape software.</h3><br>
+The two images which are inserted into the "rgb" directory:<br>
 ![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
 ![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
 
-Two manually annotated images which were used for this implementation:<br>
+The two manually annotated images which are used for this implementation:<br>
 ![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)<br>
 ![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
 
-Two masks were produced using the manually annotated images. Then the 4D images were created and fed into the SfM-MVS algorithm.
+Two masks are produced automatically by the 3DPLan algorithm, using the manually annotated images. 
+Then the 4D images are created automatically by the 3DPLan algorithm and are fed into the SfM-MVS algorithm.
 
 The produced point cloud is visualized using the RGB colors and the labels.<br>
 ![rgb](https://user-images.githubusercontent.com/45883362/113516906-994bc200-9585-11eb-8b2d-2580c15ad21a.png)<br>
 ![labels](https://user-images.githubusercontent.com/45883362/113516909-9b158580-9585-11eb-9c53-83b518e25b09.png)<br>
 
-Additionally the detected and vectorized edges are displayed.<br>
+Additionally the detected and vectorized edges are displayed in the images below.<br>
 ![edge](https://user-images.githubusercontent.com/45883362/113517678-2bee6000-958a-11eb-8ba6-7068b5534f71.png)
 ![TwoLinesVectors](https://user-images.githubusercontent.com/45883362/113517001-1414dd00-9586-11eb-8519-7998a851b1cf.png)<br>
 
-A close view of the vectorized line in combination with the rgb dense point cloud.<br>
+A close view of the vectorized line in combination with the rgb dense point cloud is depicted in the image below.<br>
 ![vector_rgb](https://user-images.githubusercontent.com/45883362/113516925-acf72880-9585-11eb-8b92-92d82d335d49.png) <br>
 
 ## License
