@@ -12,12 +12,9 @@ inserted into an SfM-MVS software to produce initially a sparse and finally, a d
 edge semantic information.</p>
 
 <p>For this purpose, three approaches were developed.<br></p>
-<pre>
-    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
+<pre>1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
     2) Using the Agisoft-Metashape software with its GUI.
-    3) Using the Agisoft_Metashape software with the provided python module.
-</pre>
-
+    3) Using the Agisoft_Metashape software with the provided python module.</pre>
 <p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into<br>
 points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest<br>
 is produced as "3DPlan.dxf".</p>
@@ -35,8 +32,7 @@ sklearn == 0.0 <br>
 scikit-image == 0.17.2 <br>
 
 ## How to use
-<pre>
-1) Clone/Download the 3DPlan master.
+<pre>1) Clone/Download the 3DPlan master.
 2) Add the RGB images into "rgb" directory.
 3) Edge semantic information.</p>
     3.1) Available:
@@ -52,23 +48,20 @@ scikit-image == 0.17.2 <br>
         Then the 4D image is produced automatically and saved into "images" directory which is created automatically.
         This procedure is executed for each RGB image.
         (Nothing to do right now, go to step 4)
-4) Execute the "3DPlan.py".
-</pre>
+4) Execute the "3DPlan.py".</pre>
 
 ## During the execution
 
 <p>(Question 1) DD:MM:YY Hr:Mins:Sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".<br>
 (Question 2) DD:MM:YY Hr:Mins:Sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):</p>
-<pre>
-Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
+<pre>Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
 If "0":
   (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
     Select how you will apply the Agisoft-Metashape pipeline. 
     The python-module choice executes the pipeline automatically.
     On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape
     graphical user interface. When the dense point cloud is produced the user must save it into the 
-    "Lines" directory, which is produced automatically, as "merged.txt".
-</pre>
+    "Lines" directory, which is produced automatically, as "merged.txt".</pre>
 <p>(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):<pre>    
 If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and 
 press "enter". Then the 3.2 step (How to use) is executed.
@@ -87,17 +80,17 @@ The two images which were inserted into the "rgb" directory:<br>
 ![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
 ![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
 
-<p>Two manually annotated images which were used for this implementation:<br></p>
+Two manually annotated images which were used for this implementation:<br>
 ![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)<br>
 ![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
 
-<p>Two masks were produced using the manually annotated images. Then the 4D images were created and fed into the SfM-MVS algorithm.</p>
+Two masks were produced using the manually annotated images. Then the 4D images were created and fed into the SfM-MVS algorithm.
 
-<p>The produced point cloud is visualized using the RGB colors and the labels.</p><br>
+The produced point cloud is visualized using the RGB colors and the labels.<br>
 ![rgb](https://user-images.githubusercontent.com/45883362/113516906-994bc200-9585-11eb-8b2d-2580c15ad21a.png)<br>
 ![labels](https://user-images.githubusercontent.com/45883362/113516909-9b158580-9585-11eb-9c53-83b518e25b09.png)
 
-<p>Additionally the detected and vectorized edges are displayed.<br></p>
+Additionally the detected and vectorized edges are displayed.
 ![edge](https://user-images.githubusercontent.com/45883362/113517678-2bee6000-958a-11eb-8ba6-7068b5534f71.png)
 ![TwoLinesVectors](https://user-images.githubusercontent.com/45883362/113517001-1414dd00-9586-11eb-8519-7998a851b1cf.png)<br>
 
