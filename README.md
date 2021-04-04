@@ -65,16 +65,18 @@ scikit-image == 0.17.2 <br>
         (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
             Select how you will apply the Agisoft-Metashape pipeline. 
             The python-module choice executes the pipeline automatically.
-            On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape graphical user interface. 
-            When the dense point cloud is produced the user must save it into the "Lines" directory, which is produced 
-            automatically, as "merged.txt".
+            On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape graphical 
+            user interface. When the dense point cloud is produced the user must save it into the "Lines" directory, which 
+            is produced automatically, as "merged.txt".
 </pre>
-(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
-    If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and press "enter".
+<p>(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
+<pre>    
+    If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and press "enter".</p>
         Then the 3.2 step (How to use) is executed.
     If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 and press "enter".
         (! Notice !) Look the step 3.1 (How to use).
-(Question 4) DD:MM:YY Hr:Mins:Sec, Give the available image format:
+<p>(Question 4) DD:MM:YY Hr:Mins:Sec, Give the available image format:</p>
+<pre>
     The user should write the images format, which are stored into "rgb" directory, for example .JPG and the to press "enter".
     The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif', '.PNG', '.png'.
 </pre>
