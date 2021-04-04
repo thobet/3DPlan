@@ -13,9 +13,9 @@ edge semantic information.</p>
 
 <p>For this purpose, three approaches were developed.<br></p>
 <pre>
-    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.</p>
-    2) Using the Agisoft-Metashape software with its GUI.<br></p>
-    3) Using the Agisoft_Metashape software with the provided python module.<br>
+    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
+    2) Using the Agisoft-Metashape software with its GUI.
+    3) Using the Agisoft_Metashape software with the provided python module.
 </pre>
 
 <p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into<br>
@@ -35,7 +35,7 @@ sklearn == 0.0 <br>
 scikit-image == 0.17.2 <br>
 
 ## How to use
-<p>
+<pre>
 1) Clone/Download the 3DPlan master.
 2) Add the RGB images into "rgb" directory.
 3) Edge semantic information.</p>
@@ -53,7 +53,7 @@ scikit-image == 0.17.2 <br>
         This procedure is executed for each RGB image.
         (Nothing to do right now, go to step 4)
 4) Execute the "3DPlan.py".
-</p>
+</pre>
 
 ## During the execution
 <pre>
