@@ -56,28 +56,29 @@ scikit-image == 0.17.2 <br>
 </pre>
 
 ## During the execution
+
+<p>(Question 1) DD:MM:YY Hr:Mins:Sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".<br>
+(Question 2) DD:MM:YY Hr:Mins:Sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):</p>
 <pre>
-(Question 1) DD:MM:YY Hr:Mins:Sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".
-(Question 2) DD:MM:YY Hr:Mins:Sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):
-        Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
-        If "0":
-            (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
-                Select how you will apply the Agisoft-Metashape pipeline. 
-                The python-module choice executes the pipeline automatically.
-                On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape graphical user interface. 
-                When the dense point cloud is produced the user must save it into the "Lines" directory, which is produced 
-                automatically, as "merged.txt".
+    Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
+    If "0":
+        (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
+            Select how you will apply the Agisoft-Metashape pipeline. 
+            The python-module choice executes the pipeline automatically.
+            On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape graphical user interface. 
+            When the dense point cloud is produced the user must save it into the "Lines" directory, which is produced 
+            automatically, as "merged.txt".
+</pre>
 (Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
-        If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and press "enter".
+    If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and press "enter".
         Then the 3.2 step (How to use) is executed.
-        If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 and press "enter".
+    If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 and press "enter".
         (! Notice !) Look the step 3.1 (How to use).
 (Question 4) DD:MM:YY Hr:Mins:Sec, Give the available image format:
-        The user should write the images format, which are stored into "rgb" directory, for example .JPG and the to press "enter".
-        The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif', '.PNG', '.png'.
-
-The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.
+    The user should write the images format, which are stored into "rgb" directory, for example .JPG and the to press "enter".
+    The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif', '.PNG', '.png'.
 </pre>
+<p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
 ## Examples
 
