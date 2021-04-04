@@ -78,9 +78,18 @@ The 3DPlan algorithm is executed according to the answers of the user and the 3D
 </pre>
 
 ## Examples
-One line detection using Agisoft-Metashape.
+<pre>
+Line detection using manually annotateed images and the Agisoft-Metashape software.
+The two images which were inserted into the "rgb" directory:
+![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png)
+![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
+
+Two manual annotated images which were used for this implementation:
 ![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)
 
 ![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
+ </pre>
+The
+
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
