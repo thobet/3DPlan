@@ -12,7 +12,8 @@ inserted into an SfM-MVS software to produce initially a sparse and finally, a d
 edge semantic information.</p>
 
 <p>For this purpose, three approaches were developed.<br></p>
-<pre>1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
+<pre>
+    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
     2) Using the Agisoft-Metashape software with its GUI.
     3) Using the Agisoft_Metashape software with the provided python module.</pre>
 <p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into<br>
@@ -88,13 +89,13 @@ Two masks were produced using the manually annotated images. Then the 4D images 
 
 The produced point cloud is visualized using the RGB colors and the labels.<br>
 ![rgb](https://user-images.githubusercontent.com/45883362/113516906-994bc200-9585-11eb-8b2d-2580c15ad21a.png)<br>
-![labels](https://user-images.githubusercontent.com/45883362/113516909-9b158580-9585-11eb-9c53-83b518e25b09.png)
+![labels](https://user-images.githubusercontent.com/45883362/113516909-9b158580-9585-11eb-9c53-83b518e25b09.png)<br>
 
-Additionally the detected and vectorized edges are displayed.
+Additionally the detected and vectorized edges are displayed.<br>
 ![edge](https://user-images.githubusercontent.com/45883362/113517678-2bee6000-958a-11eb-8ba6-7068b5534f71.png)
 ![TwoLinesVectors](https://user-images.githubusercontent.com/45883362/113517001-1414dd00-9586-11eb-8519-7998a851b1cf.png)<br>
 
-<p>A close view of the vectorized line in combination with the rgb dense point cloud.<br></p>
+A close view of the vectorized line in combination with the rgb dense point cloud.<br>
 ![vector_rgb](https://user-images.githubusercontent.com/45883362/113516925-acf72880-9585-11eb-8b92-92d82d335d49.png) <br>
 
 ## License
