@@ -12,9 +12,11 @@ inserted into an SfM-MVS software to produce initially a sparse and finally, a d
 edge semantic information.</p>
 
 <p>For this purpose, three approaches were developed.<br></p>
-<p>    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.</p>
-<p>    2) Using the Agisoft-Metashape software with its GUI.<br></p>
-<p>    3) Using the Agisoft_Metashape software with the provided python module.<br></p>
+<pre>
+    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.</p>
+    2) Using the Agisoft-Metashape software with its GUI.<br></p>
+    3) Using the Agisoft_Metashape software with the provided python module.<br>
+</pre>
 
 <p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into<br>
 points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest<br>
