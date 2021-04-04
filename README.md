@@ -81,10 +81,10 @@ The 3DPlan algorithm is executed according to the answers of the user and the 3D
 
 Line detection using manually annotateed images and the Agisoft-Metashape software.
 The two images which were inserted into the "rgb" directory:<br>
-![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png)
-<br>
-![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
-
+<p class="aligncenter">
+    ![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
+    ![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
+</p>
 Two manually annotated images which were used for this implementation:<br>
 ![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)
 <br>
