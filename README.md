@@ -91,14 +91,15 @@ Two manually annotated images which were used for this implementation:<br>
 ![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
 
 Two masks were produced using the manually annotated images. Then the 4D images were created. The 4D images were fed into the SfM-MVS algorithm.
+
 The produced point cloud is visualized using the RGB colors and the labels.<br>
-![rgb](https://user-images.githubusercontent.com/45883362/113516906-994bc200-9585-11eb-8b2d-2580c15ad21a.png)
-<br>
-![labels](https://user-images.githubusercontent.com/45883362/113516909-9b158580-9585-11eb-9c53-83b518e25b09.png)
+![rgb](https://user-images.githubusercontent.com/45883362/113516906-994bc200-9585-11eb-8b2d-2580c15ad21a.png) ![labels](https://user-images.githubusercontent.com/45883362/113516909-9b158580-9585-11eb-9c53-83b518e25b09.png) <br>
 
 Additionally the detected and vectorized edges are displayed.<br>
 ![edge](https://user-images.githubusercontent.com/45883362/113516918-a8327480-9585-11eb-8351-462587e10a4a.png) <br>
 ![TwoLinesVectors](https://user-images.githubusercontent.com/45883362/113517001-1414dd00-9586-11eb-8519-7998a851b1cf.png)<br>
+
+A close view of the vectorized line in combination with the rgb dense point cloud.<br>
 ![vector_rgb](https://user-images.githubusercontent.com/45883362/113516925-acf72880-9585-11eb-8b92-92d82d335d49.png) <br>
 
 ## License
