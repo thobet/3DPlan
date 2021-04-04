@@ -88,7 +88,7 @@ Two manually annotated images which were used for this implementation:<br>
 ![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)<br>
 ![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
 
-Two masks were produced using the manually annotated images. Then the 4D images were created. The 4D images were fed into the SfM-MVS algorithm.
+Two masks were produced using the manually annotated images. Then the 4D images were created and fed into the SfM-MVS algorithm.
 
 The produced point cloud is visualized using the RGB colors and the labels.<br>
 ![rgb](https://user-images.githubusercontent.com/45883362/113516906-994bc200-9585-11eb-8b2d-2580c15ad21a.png)<br>
