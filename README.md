@@ -73,12 +73,12 @@ and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff'
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
 ## Examples
-Line detection using manually annotateed images and the Agisoft-Metashape software.<br>
+Line detection using manually annotated images and the Agisoft-Metashape software.<br>
 The two images which are inserted into the "rgb" directory:<br>
 ![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
 ![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
 
-The two manually annotated images which are used for this implementation and inserted into #semantic_images" directory:<br>
+The two manually annotated images which are used for this implementation and inserted into "semantic_images" directory:<br>
 ![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)<br>
 ![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
 
