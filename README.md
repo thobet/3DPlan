@@ -2,7 +2,6 @@
 
                                            *** The README file is under processing ... ***
 ## Overview
-
 <p>The 3DPlan algorithm was developed during my diploma thesis, entitled "Automated detection of edges in point clouds using<br>
 semantic information", at the School of Rural and Surveying Engineering of the National Technical University of Athens,<br>
 which is available at <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/53090">ThodorisBetsas_DiplomaThesis</a>.
@@ -20,7 +19,6 @@ edge semantic information.</p>
 points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest<br>
 is produced as "3DPlan.dxf".</p>
 
-
 ## Dependencies
 numpy == 1.19.2 <br>
 opencv-python == 3.4.8.29 <br>
@@ -35,7 +33,7 @@ scikit-image == 0.17.2 <br>
 ## How to use
 <pre>1) Clone/Download the 3DPlan master.
 2) Add the RGB images into "rgb" directory.
-3) Edge semantic information.</p>
+3) Edge semantic information.
     3.1) Available:
         Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
         The semantic channels must be named as "rgbimagename_l.jpg"
@@ -52,7 +50,6 @@ scikit-image == 0.17.2 <br>
 4) Execute the "3DPlan.py".</pre>
 
 ## During the execution
-
 <p>(Question 1) DD:MM:YY Hr:Mins:Sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".<br>
 (Question 2) DD:MM:YY Hr:Mins:Sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):</p>
 <pre>Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
@@ -63,8 +60,8 @@ If "0":
     On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape
     graphical user interface. When the dense point cloud is produced the user must save it into the 
     "Lines" directory, which is produced automatically, as "merged.txt".</pre>
-<p>(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):<pre>    
-If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and 
+<p>(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
+<pre>If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and 
 press "enter". Then the 3.2 step (How to use) is executed.
 If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 
 and press "enter". (! Notice !) Look the step 3.1 (How to use).</pre>
@@ -75,7 +72,6 @@ and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff'
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
 ## Examples
-
 Line detection using manually annotateed images and the Agisoft-Metashape software.<br>
 The two images which were inserted into the "rgb" directory:<br>
 ![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
