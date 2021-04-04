@@ -78,6 +78,9 @@ The 3DPlan algorithm is executed according to the answers of the user and the 3D
 </pre>
 
 ## Examples
+One line detection using Agisoft-Metashape.
+![6621_l2](https://user-images.githubusercontent.com/45883362/113516000-93071700-9580-11eb-88b0-40e23dfd56fc.png)
 
+![6622_l2](https://user-images.githubusercontent.com/45883362/113516003-98646180-9580-11eb-9616-7ea138bbc8f8.png)
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
