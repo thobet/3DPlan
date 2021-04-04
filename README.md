@@ -2,7 +2,7 @@
 
                                            *** The README file is under processing ... ***
 ## Overview
-<pre>
+
 <p>The 3DPlan algorithm was developed during my diploma thesis, entitled "Automated detection of edges in point clouds using<br>
 semantic information", at the School of Rural and Surveying Engineering of the National Technical University of Athens,<br>
 which is available at <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/53090">ThodorisBetsas_DiplomaThesis</a>.<br>
@@ -10,7 +10,7 @@ At first, the 3DPlan algorithm enriches the given images with a new channel incl
 Thus the three-channel images (RGB) are transformed into four-channel (RGBL). Afterwards, the four-channel images are<br>
 inserted into an SfM-MVS software to produce initially a sparse and finally, a dense point cloud which is enriched with the<br>
 edge semantic information.</p>
-
+<pre>
 For this purpose, three approaches were developed.
     1) Using the OpenSfM software which was firstly modified to manipulate four-channel images. 
     2) Using the Agisoft-Metashape software with its GUI. 
