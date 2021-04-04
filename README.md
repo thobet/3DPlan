@@ -11,16 +11,14 @@ Thus the three-channel images (RGB) are transformed into four-channel (RGBL). Af
 inserted into an SfM-MVS software to produce initially a sparse and finally, a dense point cloud which is enriched with the<br>
 edge semantic information.</p>
 
-<p>For this purpose, three approaches were developed.<br>
-<pre><blockquote>
-    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.<br>
-    2) Using the Agisoft-Metashape software with its GUI.<br> 
-    3) Using the Agisoft_Metashape software with the provided python module.<br>
- </blockquote></pre>
-</p>
-Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into 
-points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest 
-is produced as "3DPlan.dxf".
+<p>For this purpose, three approaches were developed.<br></p>
+<p>    1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.</p>
+<p>    2) Using the Agisoft-Metashape software with its GUI.<br></p>
+<p>    3) Using the Agisoft_Metashape software with the provided python module.<br></p>
+
+<p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into<br>
+points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest<br>
+is produced as "3DPlan.dxf".</p>
 
 
 ## Dependencies
@@ -35,10 +33,10 @@ sklearn == 0.0 <br>
 scikit-image == 0.17.2 <br>
 
 ## How to use
-<pre>
+<p>
 1) Clone/Download the 3DPlan master.
 2) Add the RGB images into "rgb" directory.
-3) Edge semantic information.
+3) Edge semantic information.</p>
     3.1) Available:
         Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
         The semantic channels must be named as "rgbimagename_l.jpg"
@@ -53,7 +51,7 @@ scikit-image == 0.17.2 <br>
         This procedure is executed for each RGB image.
         (Nothing to do right now, go to step 4)
 4) Execute the "3DPlan.py".
-</pre>
+</p>
 
 ## During the execution
 <pre>
