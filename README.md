@@ -52,8 +52,8 @@ scikit-image == 0.17.2 <br>
 ## During the execution
 <p>(Question 1) dd:mm:yy hr:min:sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".<br>
 (Question 2) dd:mm:yy hr:min:sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):</p>
-Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
-If "0":
+Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".<br>
+If "0":<br>
 (Question 2.1) dd:mm:yy hr:min:sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
 <pre>Select how you will apply the Agisoft-Metashape pipeline. 
 The python-module choice executes the pipeline automatically.
