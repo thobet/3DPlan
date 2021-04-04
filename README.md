@@ -54,21 +54,21 @@ scikit-image == 0.17.2 <br>
 (Question 2) dd:mm:yy hr:min:sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):</p>
 Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".<br>
 If "0":<br>
-(Question 2.1) dd:mm:yy hr:min:sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
-<pre>Select how you will apply the Agisoft-Metashape pipeline. 
+<pre>(Question 2.1) dd:mm:yy hr:min:sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
+Select how you will apply the Agisoft-Metashape pipeline. 
 The python-module choice executes the pipeline automatically.
 On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape
 graphical user interface. When the dense point cloud is produced the user must save it into the 
 "Lines" directory, which is produced automatically, as "merged.txt".</pre>
-If "1" or "2": The 3DPlan algorithm is executed automatically.<br>
+If "1" or "2":<pre>The 3DPlan algorithm is executed automatically.</pre>
 (Question 3) dd:mm:yy hr:min:sec, Canny (0) or external semantic information (1)? (Write 0 or 1):<br>
-If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and <br>
-press "enter". Then the 3.2 step (How to use) is executed.<br>
-If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1<br>
-and press "enter". (! Notice !) Look the step 3.1 (How to use).<br>
-(Question 4) dd:mm:yy hr:min:sec, Give the available image format:<br>
-The user should write the images format, which are stored into "rgb" directory, for example .JPG<br>
-and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif',<br>
+<pre>If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and
+press "enter". Then the 3.2 step (How to use) is executed.
+If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1
+and press "enter". (! Notice !) Look the step 3.1 (How to use).</pre>
+(Question 4) dd:mm:yy hr:min:sec, Give the available image format:
+<pre>The user should write the images format, which are stored into "rgb" directory, for example .JPG
+and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif',
 '.PNG', '.png'.</pre><br>
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
