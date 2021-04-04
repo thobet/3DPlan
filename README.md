@@ -38,18 +38,18 @@ scikit-image == 0.17.2 <br>
 2) Add the RGB images into "rgb" directory.
 3) Edge semantic information.
     3.1) Available:
-          Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
-          The semantic channels must be named as "rgbimagename_l.jpg"
-          For example: RGB image --> 4G0R6560.JPG
+        Add the semantic channel i.e., 1D image, for each image, into "semantic_images" directory.
+        The semantic channels must be named as "rgbimagename_l.jpg"
+        For example: RGB image --> 4G0R6560.JPG
                        semantic channel --> 4G0R6560_l.jpg
     3.2) Not available:
-          The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing
-          the edge semantic information.
-          The live-editor begins and the user modifies Canny's parameters. When the user is satisfied by the detected
-          edges, he presses the Q button to terminate the editing procedure.
-          Then the 4D image is produced automatically and saved into "images" directory which is created automatically.
-          This procedure is executed for each RGB image.
-          (Nothing to do right now, go to step 4)
+        The 3DPlan algorithm contains a live-implementation of the Canny algorithm which could be used for producing
+        the edge semantic information.
+        The live-editor begins and the user modifies Canny's parameters. When the user is satisfied by the detected
+        edges, he presses the Q button to terminate the editing procedure.
+        Then the 4D image is produced automatically and saved into "images" directory which is created automatically.
+        This procedure is executed for each RGB image.
+        (Nothing to do right now, go to step 4)
 4) Execute the "3DPlan.py".
 </pre>
 
@@ -57,16 +57,27 @@ scikit-image == 0.17.2 <br>
 <pre>
 (Question 1) DD:MM:YY Hr:Mins:Sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".
 (Question 2) DD:MM:YY Hr:Mins:Sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):
-          Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
-          If "0":
+        Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".
+        If "0":
             (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
                 Select how you will apply the Agisoft-Metashape pipeline. 
                 The python-module choice executes the pipeline automatically.
-                On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape interface. 
+                On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape graphical user interface. 
                 When the dense point cloud is produced the user must save it into the "Lines" directory, which is produced 
                 automatically, as "merged.txt".
-(Question 3) DD:MM:YY Hr:Mins:Sec,
+(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
+        If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and press "enter".
+        Then the 3.2 step (How to use) is executed.
+        If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 and press "enter".
+        (! Notice !) Look the step 3.1 (How to use).
+(Question 4) DD:MM:YY Hr:Mins:Sec, Give the available image format:
+        The user should write the images format, which are stored into "rgb" directory, for example .JPG and the to press "enter".
+        The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif', '.PNG', '.png'.
+
+The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.
 </pre>
+
+## Examples
 
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
