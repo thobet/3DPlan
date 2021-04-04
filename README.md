@@ -65,15 +65,17 @@ scikit-image == 0.17.2 <br>
         (Question 2.1) DD:MM:YY Hr:Mins:Sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
             Select how you will apply the Agisoft-Metashape pipeline. 
             The python-module choice executes the pipeline automatically.
-            On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape graphical 
-            user interface. When the dense point cloud is produced the user must save it into the "Lines" directory, which 
-            is produced automatically, as "merged.txt".
+            On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape
+            graphical user interface. When the dense point cloud is produced the user must save it into the 
+            "Lines" directory, which is produced automatically, as "merged.txt".
 </pre>
 <p>(Question 3) DD:MM:YY Hr:Mins:Sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
 <pre>    
-    If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and press "enter".</p>
+    If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and 
+    press "enter".
         Then the 3.2 step (How to use) is executed.
-    If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 and press "enter".
+    If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 
+    and press "enter".
         (! Notice !) Look the step 3.1 (How to use).
 <p>(Question 4) DD:MM:YY Hr:Mins:Sec, Give the available image format:</p>
 <pre>
@@ -84,9 +86,9 @@ scikit-image == 0.17.2 <br>
 
 ## Examples
 
-<p>Line detection using manually annotateed images and the Agisoft-Metashape software.<br></p>
-<p>The two images which were inserted into the "rgb" directory:<br></p>
-![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br></p>
+Line detection using manually annotateed images and the Agisoft-Metashape software.<br>
+The two images which were inserted into the "rgb" directory:<br>
+![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
 ![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
 
 <p>Two manually annotated images which were used for this implementation:<br></p>
