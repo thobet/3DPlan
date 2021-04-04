@@ -61,15 +61,15 @@ On the other hand the GUI option waits for the user to run the algorithm using t
 graphical user interface. When the dense point cloud is produced the user must save it into the 
 "Lines" directory, which is produced automatically, as "merged.txt".</pre>
 If "1" or "2": The 3DPlan algorithm is executed automatically.<br>
-<p>(Question 3) dd:mm:yy hr:min:sec, Canny (0) or external semantic information (1)? (Write 0 or 1):
-<pre>If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and 
-press "enter". Then the 3.2 step (How to use) is executed.
-If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1 
-and press "enter". (! Notice !) Look the step 3.1 (How to use).</pre>
-<p>(Question 4) dd:mm:yy hr:min:sec, Give the available image format:</p><pre>
-The user should write the images format, which are stored into "rgb" directory, for example .JPG 
-and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif', 
-'.PNG', '.png'.</pre>
+(Question 3) dd:mm:yy hr:min:sec, Canny (0) or external semantic information (1)? (Write 0 or 1):<br>
+If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and <br>
+press "enter". Then the 3.2 step (How to use) is executed.<br>
+If the edge semantic information is available the user should select the "semantic information" choice i.e., write 1<br>
+and press "enter". (! Notice !) Look the step 3.1 (How to use).<br>
+(Question 4) dd:mm:yy hr:min:sec, Give the available image format:<br>
+The user should write the images format, which are stored into "rgb" directory, for example .JPG<br>
+and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif',<br>
+'.PNG', '.png'.</pre><br>
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
 ## Examples
