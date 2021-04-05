@@ -101,13 +101,13 @@ The processing is exactly the same as the previous example. The difference is th
 and the user creates the edge semantic information. When the user is satisfied with the edge map press the "Q" button and continues <br>
 to the next image. ( Notice !) Look the step 3.2 (How to use). <br>
 
-The live-canny editor:
+The live-canny editor:<br>
 ![canny_editor](https://user-images.githubusercontent.com/45883362/113617282-d8017b00-965e-11eb-8a55-9b500c9716f9.png)
 
-The detected edges:
+The detected edges:<br>
 ![temple](https://user-images.githubusercontent.com/45883362/113617325-dfc11f80-965e-11eb-896e-f2fdc091158a.png)
 
-The extracted 3D vectors, i.e. "lines.dxf":
+The extracted 3D vectors, i.e. "lines.dxf":<br>
 ![temple_vec](https://user-images.githubusercontent.com/45883362/113617422-f6677680-965e-11eb-91cd-6d61aabcd377.png)
 
 ## License
