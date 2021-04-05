@@ -73,7 +73,7 @@ and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff'
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
 
 ## Examples
-Line detection using manually annotated images and the Agisoft-Metashape software.<br>
+1) LINE DETECTION USING MANUALLY ANNOTATED IMAGES AND THE AGISOFT-METASHAPE SOFTWARE.<br>
 The two images which are inserted into the "rgb" directory:<br>
 ![6621](https://user-images.githubusercontent.com/45883362/113516175-79b29a80-9581-11eb-91f0-8a86fdbb2395.png) <br>
 ![6622](https://user-images.githubusercontent.com/45883362/113516179-7e774e80-9581-11eb-9518-58453fb3889c.png)
@@ -95,6 +95,20 @@ Additionally the detected and vectorized edges are displayed in the images below
 
 A close view of the vectorized line in combination with the rgb dense point cloud is depicted in the image below.<br>
 ![vector_rgb](https://user-images.githubusercontent.com/45883362/113516925-acf72880-9585-11eb-8b92-92d82d335d49.png) <br>
+
+2) MULTIPLE LINES DETECTION USING THE CUNNY ALGORITHM AND THE AGISOFT-METASHAPE SOFTWARE.<br>
+The processing is exactly the same as the previous example. The difference is that a live-canny editor is executed automatically <br>
+and the user creates the edge semantic information. When the user is satisfied with the edge map press the "Q" button and continues <br>
+to the next image. ( Notice !) Look the step 3.2 (How to use). <br>
+
+The live-canny editor:
+![canny_editor](https://user-images.githubusercontent.com/45883362/113617282-d8017b00-965e-11eb-8a55-9b500c9716f9.png)
+
+The detected edges:
+![temple](https://user-images.githubusercontent.com/45883362/113617325-dfc11f80-965e-11eb-896e-f2fdc091158a.png)
+
+The extracted 3D vectors, i.e. "lines.dxf":
+![temple_vec](https://user-images.githubusercontent.com/45883362/113617422-f6677680-965e-11eb-91cd-6d61aabcd377.png)
 
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
