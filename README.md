@@ -110,8 +110,7 @@ The detected edges:<br>
 The extracted 3D vectors, i.e. "lines.dxf":<br>
 ![temple_vec](https://user-images.githubusercontent.com/45883362/113617422-f6677680-965e-11eb-91cd-6d61aabcd377.png)
 
-An in depth analysis of the proposed approach and in general the 3DPlan algorithm <br>
-is available at <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/53090">ThodorisBetsas_DiplomaThesis</a>.
+An in depth analysis of the proposed approach and in general of the 3DPlan algorithm is available at <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/53090">ThodorisBetsas_DiplomaThesis</a>.
 
 ## License
 3DPlan is GPL-3.0 licensed, as found in the LICENSE file.
