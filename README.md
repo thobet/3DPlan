@@ -14,8 +14,8 @@ edge semantic information.</p><br>
     1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
     2) Using the Agisoft-Metashape software with its GUI.
     3) Using the Agisoft_Metashape software with the provided python module.</pre>
-<p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into<br>
-points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest<br>
+<p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into
+points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest
 is produced as "3DPlan.dxf".</p>
 
 ## Dependencies
@@ -49,7 +49,7 @@ scikit-image == 0.17.2 <br>
 4) Execute the "3DPlan.py".</pre>
 
 ## During the execution
-<p>(Question 1) dd:mm:yy hr:min:sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".<br>
+<p>(Question 1) dd:mm:yy hr:min:sec, 3D (0) or 4D (1) output? (Write 0 or 1): The recommended answer is "1".
 (Question 2) dd:mm:yy hr:min:sec, Agisoft-Metashape (0), Mapillary-OpenSFM (1) or MyTriangulation (2)? (Write 0, 1 or 2):</p>
 Select the answer depending the SfM-MVS algorithm that you want to use. The recommended answer is "0".<br>
 If "0":<br>
