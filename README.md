@@ -106,7 +106,7 @@ The live-canny editor:<br>
 The detected edges:<br>
 ![temple](https://user-images.githubusercontent.com/45883362/113617325-dfc11f80-965e-11eb-896e-f2fdc091158a.png)
 
-The extracted 3D vectors, i.e. "lines.dxf":<br>
+The extracted 3D vectors, i.e. "lines.dxf", in combination with the sparse point cloud:<br>
 ![temple_vec](https://user-images.githubusercontent.com/45883362/113617422-f6677680-965e-11eb-91cd-6d61aabcd377.png)
 
 An in depth analysis of the proposed approach and in general of the 3DPlan algorithm is available at <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/53090">ThodorisBetsas_DiplomaThesis</a>.
