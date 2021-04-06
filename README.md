@@ -58,10 +58,10 @@ If "0":<br>
 <pre>(Question 2.1) dd:mm:yy hr:min:sec, Python Module (0) or GUI (1) output? (Write 0 or 1):
 Select how you will apply the Agisoft-Metashape pipeline. 
 The python-module choice executes the pipeline automatically.
-On the other hand the GUI option waits for the user to run the algorithm using the Agisoft-Metashape
+On the other hand the GUI option waits for the user to run the SfM-MVS workflow using the Agisoft-Metashape
 graphical user interface. When the dense point cloud is produced the user must save it into the 
 "Lines" directory, which is produced automatically, as "merged.txt".</pre>
-If "1" or "2":<pre>The 3DPlan algorithm is executed automatically.</pre>
+If "1" or "2":<pre>The 3DPlan algorithm execute the SfM-MVS workflow (OpenSfM) or the MyTriangulation pipeline, automatically.</pre>
 (Question 3) dd:mm:yy hr:min:sec, Canny (0) or external semantic information (1)? (Write 0 or 1):<br>
 <pre>If the edge semantic information is not available the user should select the "Canny" choice i.e., write 0 and
 press "enter". Then the 3.2 step (How to use) is executed.
@@ -72,6 +72,10 @@ and press "enter". (! Notice !) Look the step 3.1 (How to use).</pre>
 and the to press "enter". The valid answers are '.JPG', '.jpg', '.TIFF', '.tiff', '.tif',
 '.PNG', '.png'.</pre><br>
 <p>The 3DPlan algorithm is executed according to the answers of the user and the 3DPlan.dxf archive is produced into the "Lines" directory.</p>
+
+## OpenSfM approach
+
+The README is under development
 
 ## Examples
 1) LINE DETECTION USING MANUALLY ANNOTATED IMAGES AND THE AGISOFT-METASHAPE SOFTWARE.<br>
