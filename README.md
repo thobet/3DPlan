@@ -1,6 +1,6 @@
 # 3DPlan
 
-<b>Currently under development</b>
+<b>Currently the README archive is under development</b>
 
 ## Overview
 <p>The 3DPlan algorithm was developed during my diploma thesis, entitled "Automated detection of edges in point clouds using
