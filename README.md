@@ -14,7 +14,7 @@ edge semantic information.</p><br>
     1) Using the OpenSfM software which was firstly modified to manipulate four-channel images.
     2) Using the Agisoft-Metashape software with its GUI.
     3) Using the Agisoft_Metashape software with the provided python module.</pre>
-<p>Then the points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into
+<p>The points belonging to edges are firstly detected, into the semantically enriched point cloud and then classified into
 points of each edge. Finally, each segment of points is vectorized and thus, the approximated 3D plan of the object of interest
 is produced as "3DPlan.dxf".</p>
 
