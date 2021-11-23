@@ -352,9 +352,7 @@ class Triang:
         """
         Rt = np.transpose(self.R)
         Rtt = np.matmul(-Rt, self.t)
-        P_t = []
-        P_t.append(Rt)
-        P_t.append(Rtt)
+        P_t = [Rt, Rtt]
         P_t = np.concatenate(P_t, axis=1)
         self.left_projection_matrix = np.matmul(np.array(self.camera_matrix),
                                                 P_t)  # Calculate projection matrix from pose.
@@ -370,9 +368,9 @@ class Triang:
                                                       axis=1)  # Set the start projection matrix.
 
     def triangulate_points(self):
-        '''
+        """
         This function compute 4D points via 2D image detected points and the projection matrix.
-        '''
+        """
         ptsLT = np.transpose(self.ptsL)  # Find the transpose of list pts1
         ptsRT = np.transpose(self.ptsR)  # Find the transpose of list pts2
 
@@ -386,7 +384,7 @@ class Triang:
             self.triangulated_points)  # Find the transpose of triangulated points list
 
     def export_info(self):
-        ''' This finction exports the generated point cloud into ./PointClouds folder'''
+        """ This finction exports the generated point cloud into ./PointClouds folder"""
         mkdir('Lines')
         points3d = []
         i = -1
