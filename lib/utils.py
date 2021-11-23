@@ -27,8 +27,9 @@ import sys
 from pathlib import Path
 import datetime
 
-def classify_points(path: str='', filename: str='', savefilename: str='', t: int=230, method: int=0):
-    '''
+
+def classify_points(path: str = '', filename: str = '', savefilename: str = '', t: int = 230, method: int = 0):
+    """
     This function classifies the point cloud into labelled and unlabelled points
     Args:
         path (str)         = Working directory.
@@ -39,7 +40,7 @@ def classify_points(path: str='', filename: str='', savefilename: str='', t: int
 
     Returns:
 
-    '''
+    """
     message('Save the detected points to edges.txt file ...')
     detected_points = 0
     savefile = f'{path}/{savefilename}.txt'
@@ -47,18 +48,19 @@ def classify_points(path: str='', filename: str='', savefilename: str='', t: int
     with open(f'{path}/{filename}', 'r') as f:
         all_lines = f.readlines()
         for line in all_lines[15:]:
-            l = line.split(' ')
+            splitline = line.split(' ')
             if method == 0 or method == 2:
-                label = int(l[-1])
+                label = int(splitline[-1])
             else:
-                label = int(l[-2])
+                label = int(splitline[-2])
             if label >= t:
                 detected_points += 1
                 write_a_file(path, savefilename, '.txt', line)
     message(f'{detected_points} points are saved!')
 
+
 def convert_points_2_cvkeypoints(points):
-    '''
+    """
     This function converts a given point set to cvkeypoints.
     Args:
         points (numpy array/list) = The set of points.
@@ -66,12 +68,13 @@ def convert_points_2_cvkeypoints(points):
     Returns:
         cv_kp (numpy array) = The set of points as "cvkeypoints"
 
-    '''
+    """
     cv_kp = [cv.KeyPoint(x=pt[0], y=pt[1], _size=1) for pt in points]
     return cv_kp
 
-def error_message(msg: str='', sysex: bool=False):
-    '''
+
+def error_message(msg: str = '', sysex: bool = False):
+    """
     This function is used for printing error messages when the latter occur
     Args:
         msg (str)    = Working directory.
@@ -79,15 +82,16 @@ def error_message(msg: str='', sysex: bool=False):
 
     Returns:
 
-    '''
+    """
     dt = datetime.datetime.now()
     if sysex:
         sys.exit(f'{dt}, {msg}\n')
     else:
         message(msg)
 
-def export2ply(points3d: list=[], colors: list=[], filename: str=''):
-    '''
+
+def export2ply(points3d: list = [], colors: list = [], filename: str = ''):
+    """
     This function saves the calculated 3D points with their corresponding colours to a .ply file.
     Args:
         points3d (list) = The set of points.
@@ -96,7 +100,7 @@ def export2ply(points3d: list=[], colors: list=[], filename: str=''):
 
     Returns:
 
-    '''
+    """
     colors = np.array(colors)
     points3d = np.hstack([points3d, colors])
 
@@ -105,8 +109,9 @@ def export2ply(points3d: list=[], colors: list=[], filename: str=''):
         f.write(ply_header % dict(points_num=len(points3d)))
         np.savetxt(f, points3d, '%f %f %f %d %d %d')
 
-def find_files (file_path: str='', file_suffix: str=''):
-    '''
+
+def find_files(file_path: str = '', file_suffix: str = ''):
+    """
     This function finds all the files that a directory contains with a specific suffix.
     Args:
         file_path (str)   = The path of the images.
@@ -115,12 +120,13 @@ def find_files (file_path: str='', file_suffix: str=''):
     Returns:
         filenames (list) = Contains the imagenames of all the detected images.
 
-    '''
+    """
     filenames = [f for f in os.listdir(file_path) if os.path.splitext(f)[-1] == file_suffix]
     return filenames
 
-def input_check(msg: str='', valid: list=[], error_msg: str=''):
-    '''
+
+def input_check(msg: str = '', valid: list = [], error_msg: str = ''):
+    """
     This function receives an answer from the user and checks if it is valid or not.
     Args:
         msg (str)       = The question.
@@ -130,19 +136,19 @@ def input_check(msg: str='', valid: list=[], error_msg: str=''):
     Returns:
         inpt (etc) = User's answer.
 
-    '''
+    """
     done = 1
     while done == 1:
         try:
             dt = datetime.datetime.now()
             inpt = input(f'{dt}, {msg}')
-            
+
             if type(valid[0]) == int:
                 inpt = int(inpt)
-            
+
             if inpt in valid:
                 done = 0
-            
+
             else:
                 error_message(f'{error_msg}. The valid answers are {valid}. Choose one!')
         except ValueError:
@@ -150,25 +156,28 @@ def input_check(msg: str='', valid: list=[], error_msg: str=''):
             error_message(f'{error_msg} the valid answers are {valid}. Choose one!')
     return inpt
 
-def lines2dxf (lines: list=[]):
-    '''
+
+def lines2dxf(lines: list = []):
+    """
     This function receives a list of lists in which the first and the second element is the firs the last point of a line. The points must be 3D.
     Args:
         lines (list of lists) = A list of lists which contains two of each lines' points for the vectorization step.
 
     Returns:
 
-    '''
-    d=sdxf.Drawing()
+    """
+    d = sdxf.Drawing()
     layername = 'lines'
     for line in lines:
-        pts = [[np.float(line[0][0]), np.float(line[0][1]), np.float(line[0][2])], [np.float(line[1][0]), np.float(line[1][1]), np.float(line[1][2])]]
-        #print (pts)
-        d.append(sdxf.Line(points=[pts[0], pts[1]], layer=layername, color=255)) 
+        pts = [[np.float(line[0][0]), np.float(line[0][1]), np.float(line[0][2])],
+               [np.float(line[1][0]), np.float(line[1][1]), np.float(line[1][2])]]
+        # print (pts)
+        d.append(sdxf.Line(points=[pts[0], pts[1]], layer=layername, color=255))
     d.saveas(f'{os.getcwd()}/Lines/3DPlan.dxf')
 
+
 def lines_env(parent_directory, method=1):
-    '''
+    """
     This function constructs the environment of the 3DPlan algorithm
     Args:
         parent_directory (str) = The parent directory.
@@ -176,62 +185,67 @@ def lines_env(parent_directory, method=1):
 
     Returns:
 
-    '''
+    """
     mkdir('Lines')
     if method == 1:
         osf_path = f'{parent_directory}/OpenSfM/data'
         os.system(f'cp {osf_path}/3DPlan/undistorted/depthmaps/merged.ply Lines')
 
-def message(msg: str=''):
-    '''
+
+def message(msg: str = ''):
+    """
     This function is used instead of the print function
     Args:
         msg (str) = The message.
 
     Returns:
 
-    '''
+    """
     dt = datetime.datetime.now()
-    print (f'{dt}, {msg}\n')
+    print(f'{dt}, {msg}\n')
 
-def metamessage(msg: str=''):
-    '''
+
+def metamessage(msg: str = ''):
+    """
     This function is the same as the message but is compatible with metashape software v.1.5.2
     Args:
         msg (str) = The message.
 
     Returns:
 
-    '''
+    """
     dt = datetime.datetime.now()
-    print (dt + ', ' + msg + '\n')
+    print(dt + ', ' + msg + '\n')
 
-def mkdir(new_directory_name: str=''):
-    '''
+
+def mkdir(new_directory_name: str = ''):
+    """
     This function makes a new directory into the working directory.
     Args:
         new_directory_name (str) = New directory's name.
-    '''
+    """
     if not os.path.exists(new_directory_name):
         os.mkdir(new_directory_name)
 
+
 def osfm_env(parent_directory):
-    '''
+    """
     This function makes the directories and copy-paste the appropriate files for the OpenSFM pipeline
     Args:
         parent_directory (str) = The parent directory.
 
     Returns:
 
-    '''
+    """
     osf_path = f'{parent_directory}/OpenSfM/data'
     mkdir(f'{osf_path}/3DPlan')
     mkdir(f'{osf_path}/3DPlan/images')
     os.system(f'cp images/*tiff {osf_path}/3DPlan/images')
     os.system(f'cp {osf_path}/berlin/config.yaml {osf_path}/3DPlan')
 
+
 def points2clusters(points, labels, label):
-    '''
+    """
     This function identifies wich points are included into the given label class, and then returns theirs coordinates and colors.
     Args:
         points (list) = The under-process points.
@@ -242,7 +256,7 @@ def points2clusters(points, labels, label):
         pout (list) = The coordinates of the points which are characterized by the under-process label value.
         cout (list) = The colors of the points which are characterized by the under-process label value.
 
-    '''
+    """
     pout = []
     cout = []
     indices = np.where(labels == label)
@@ -252,8 +266,10 @@ def points2clusters(points, labels, label):
         cout.append(colors)
     return pout, cout
 
-def read_txt_coordinates_to_list(path2folder: str='', txtfilename: str='', seperator: str=' ', colour: bool=False):
-    '''
+
+def read_txt_coordinates_to_list(path2folder: str = '', txtfilename: str = '', seperator: str = ' ',
+                                 colour: bool = False):
+    """
     This function reads the points' coordinates and colors from a .txt archive and adds them into a list.
     Args:
         path2folder (str)  = The path to the folder, contains the .txt archive.
@@ -265,9 +281,9 @@ def read_txt_coordinates_to_list(path2folder: str='', txtfilename: str='', seper
         points (list) = The points.
         colors (list) = The colors.
 
-    '''
-    with open (f'{path2folder}/{txtfilename}') as txtfile:
-        points  = []
+    """
+    with open(f'{path2folder}/{txtfilename}') as txtfile:
+        points = []
         colours = []
         for line in txtfile:
             coordinates = line.split(seperator)
@@ -279,8 +295,9 @@ def read_txt_coordinates_to_list(path2folder: str='', txtfilename: str='', seper
     else:
         return points
 
+
 def txt2ply(txtfilename, plyfilename):
-    '''
+    """
     This function transforms the given .txt file to a .ply one.
     Args:
         txtfilename (str)  = The name of the .txt archive.
@@ -288,7 +305,7 @@ def txt2ply(txtfilename, plyfilename):
 
     Returns:
 
-    '''
+    """
     txtobj = open(txtfilename, 'r')
     data = txtobj.read().splitlines()
     points_num = len(data)
@@ -298,8 +315,9 @@ def txt2ply(txtfilename, plyfilename):
     for line in data:
         plyobj.write(f'{line}\n')
 
-def write_a_file(writing_path: str='', filename: str='', suffix: str='', line: str=''):
-    '''
+
+def write_a_file(writing_path: str = '', filename: str = '', suffix: str = '', line: str = ''):
+    """
     This function writes a new archive line by line.
     Args:
         writing_path (str)  = The path in which the file will be saved.
@@ -309,23 +327,24 @@ def write_a_file(writing_path: str='', filename: str='', suffix: str='', line: s
 
     Returns:
 
-    '''
+    """
     filename = f'{writing_path}/{filename}{suffix}'
-    with open(filename, 'a') as f: #changed from a to w
+    with open(filename, 'a') as f:
         f.write(line)
-    f.close
+    f.close()
+
 
 def cleararchive(file):
-    '''
+    """
     This function clears an existing archive
     Args:
         file (str)  = The name of the file.
 
     Returns:
 
-    '''
+    """
     try:
         with open(file, 'w'):
             pass
-    except:
+    except FileNotFoundError:
         pass
