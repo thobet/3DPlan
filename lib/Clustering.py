@@ -28,7 +28,7 @@ import os
 
 def dbscan(points, eps=0.001, min_samples=10):
     '''
-    This function is inspirated by skimage's implementation at: https://scikit-learn.org/stable/modules/clustering.html#overview-of-clustering-methods. (Accessed 20/11/2020)
+    This function is inspired by skimage's implementation at: https://scikit-learn.org/stable/modules/clustering.html#overview-of-clustering-methods. (Accessed 20/11/2020)
     Firstly, finds the clusters via DBSCAN algorithm implementation. Then, executes the RANSAC algorithm to separates the inliers from the outliers.
     Args:
         points (numpy array) = The 3D calculate points i.e Point Cloud without the colors.
