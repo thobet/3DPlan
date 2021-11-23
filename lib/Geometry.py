@@ -30,10 +30,12 @@ import cv2 as cv
 from PIL import ExifTags, Image
 
 from lib.config import default_config
+
 config = default_config()
 
+
 class Image:
-    '''
+    """
         Name: Image
 
         Description: Image class: 1) Calculates image's camera matrix.
@@ -73,47 +75,46 @@ class Image:
 
             The feature extraction methods impelementation, they are similar to OpenSfM sofware (https://github.com/mapillary/OpenSfM/blob/master/opensfm/features.py)
             The configuration file (lib.config) is the OpenSfM's one.
-    '''
-    
+    """
+
     def __init__(self, imgname, method):
-        '''Constructor'''
+        """Constructor"""
         self.array = cv.imread(f'./images/{imgname}', cv.IMREAD_UNCHANGED)
         self.imagename = imgname
-        self.imgid:         int  = 0
-        
-        self.focal:         int  = 0
-        self.width:         int  = 0
-        self.height:        int  = 0
-        self.camera_model : str  = ''
-        
-        self.lchannel:      list = []
-        
+        self.imgid: int = 0
+
+        self.focal: int = 0
+        self.width: int = 0
+        self.height: int = 0
+        self.camera_model: str = ''
+
+        self.lchannel: list = []
+
         # --- Feature Extraction Variables ---
         self.feature_extraction_method = method
-        self.points:        list = []
-        self.descriptors:   list = []
-        self.color:         list = []
-        
+        self.points: list = []
+        self.descriptors: list = []
+        self.color: list = []
+
         # --- Camera Matrix Variables ---
         self.principal_point: list = []
-        self.camera_matrix:   list = []
-        
+        self.camera_matrix: list = []
+
         # --- Pull the trigger ---
-        Image.camera_matrix(self)
-        
+        Image.camera_matrix()
+
         if method == 'Akaze':
-            Image.akaze(self)
-        
+            Image.akaze()
+
         if method == 'Sift':
-            Image.sift(self)
-        
+            Image.sift()
+
         if method == 'Surf':
-            Image.surf(self)
-        
+            Image.surf()
+
         if method == 'ORB':
-            Image.orb(self)
-         
-    
+            Image.orb()
+
     # --- Setters ---
     def set_imagename(self, name):
         self.imagename = name
@@ -138,7 +139,7 @@ class Image:
 
     def set_feature_extraction_method(self, method):
         self.feature_extraction_method = method
-        
+
     # --- Getters ---
     def get_array(self):
         return self.array
@@ -172,123 +173,124 @@ class Image:
 
     # --- Methods ---
     def image_exif(self, suffix):
-        '''
+        """
             This function extracts image's metadata.
 
             args:
                 suffix (str): 3 channel image's suffix i.e. (.JPG, .jpg, .tif etc.)
-        '''
+        """
         image = PIL.Image.open(f'./rgb/{self.imagename[:-5]}{suffix}')
 
         exif = {ExifTags.TAGS[k]: v for k, v in image._getexif().items() if k in ExifTags.TAGS}
-        
-        #print (exif)
-        self.focal        = [exif.get('FocalLength')][0][0]
-        self.width        = [exif.get('ExifImageWidth')][0]
-        self.height       = [exif.get('ExifImageHeight')][0]
+
+        # print (exif)
+        self.focal = [exif.get('FocalLength')][0][0]
+        self.width = [exif.get('ExifImageWidth')][0]
+        self.height = [exif.get('ExifImageHeight')][0]
         self.camera_model = exif.get('Model ')
-        
+
         if self.camera_model == 'Canon EOS 6D':
-            self.principal_point = [2756, 1774]     
+            self.principal_point = [2756, 1774]
         else:
             if self.width > self.height:
-                self.principal_point = [self.width/2, self.height/2] #Sets principal point as the central pixel (Approximation)
+                self.principal_point = [self.width / 2,
+                                        self.height / 2]  # Sets principal point as the central pixel (Approximation)
             elif self.width < self.height:
-                self.principal_point = [self.height/2, self.width/2]
-
+                self.principal_point = [self.height / 2, self.width / 2]
 
     def camera_matrix(self):
-        '''Calculates the camera matrix'''
-        Image.image_exif(self, '.JPG')
-        
-        camera_matrix = [[self.focal,     0, self.principal_point[0]],
-                         [    0, self.focal, self.principal_point[1]],
-                         [    0,     0,                            1]]
-        
+        """Calculates the camera matrix"""
+        Image.image_exif('.JPG')
+
+        camera_matrix = [[self.focal, 0, self.principal_point[0]],
+                         [0, self.focal, self.principal_point[1]],
+                         [0, 0, 1]]
+
         self.camera_matrix = np.array(camera_matrix)
-        
+
     def akaze(self):
-        '''Implements the AKAZE algorithm'''
+        """Implements the AKAZE algorithm"""
         method = cv.AKAZE_create()
-        
+
         self.points, self.descriptors = method.detectAndCompute(self.array, None)
-        
+
         message(f'Found {len(self.points)} key points on image {self.imagename} using Akaze method')
-        
+
         pts = [self.points[idx].pt for idx in range(0, len(self.points))]
         pts = np.array(pts)
-        
+
         xs = pts[:, 0].round().astype(int)
         ys = pts[:, 1].round().astype(int)
         color = self.array[ys, xs]
         self.color = np.array(color)
-    
-    def sift (self):
-        '''Implements the Sift algorithm'''
+
+    def sift(self):
+        """Implements the Sift algorithm"""
         sift_edge_threshold = config['sift_edge_threshold']
         sift_peak_threshold = float(config['sift_peak_threshold'])
-        
+
         try:
-            detector = cv.xfeatures2d.SIFT_create(edgeThreshold=sift_edge_threshold, contrastThreshold=sift_peak_threshold)
+            detector = cv.xfeatures2d.SIFT_create(edgeThreshold=sift_edge_threshold,
+                                                  contrastThreshold=sift_peak_threshold)
         except AttributeError:
             print('OpenCV Contrib modules are required to extract SIFT features')
             raise
-        
+
         descriptor = detector
         detector = cv.xfeatures2d.SIFT_create()
-        
+
         points = detector.detect(self.array)
         self.points, self.descriptors = descriptor.compute(self.array, points)
         message(f'Found {len(points)} key points on image {self.imagename} using sift method')
-        self.points = np.array([(i.pt[0], i.pt[1], i.size, i.angle) for i in  self.points])
-        
+        self.points = np.array([(i.pt[0], i.pt[1], i.size, i.angle) for i in self.points])
+
         xs = self.points[:, 0].round().astype(int)
         ys = self.points[:, 1].round().astype(int)
         color = self.array[ys, xs]
         self.color = np.array(color)
-        
-    def surf (self):
-        '''Implements the SURF feature extraction algorithm'''
+
+    def surf(self):
+        """Implements the SURF feature extraction algorithm"""
         surf_hessian_threshold = config['surf_hessian_threshold']
-        
+
         try:
             detector = cv.xfeatures2d.SURF_create()
         except AttributeError:
             message('OpenCV Contrib modules are required to extract surf features')
             raise
-        
+
         descriptor = detector
         detector.setHessianThreshold(surf_hessian_threshold)
         detector.setNOctaves(config['surf_n_octaves'])
         detector.setNOctaveLayers(config['surf_n_octavelayers'])
         detector.setUpright(config['surf_upright'])
         detector.setHessianThreshold(surf_hessian_threshold)
-        
+
         points = detector.detect(self.array)
-        
+
         self.points, self.descriptors = descriptor.compute(self.array, points)
         message(f'Found {len(self.points)} key points on image {self.imagename} using surf method')
         self.points = np.array([(i.pt[0], i.pt[1], i.size, i.angle) for i in self.points])
-        
+
         xs = self.points[:, 0].round().astype(int)
         ys = self.points[:, 1].round().astype(int)
         self.color = self.array[ys, xs]
 
-    def orb (self):
-        '''Implements the ORB feature extraction algorithm'''
+    def orb(self):
+        """Implements the ORB feature extraction algorithm"""
         detector = cv.ORB_create(nfeatures=int(config['feature_min_frames']))
         descriptor = detector
-        
+
         points = detector.detect(self.array)
-        
+
         self.points, self.descriptors = descriptor.compute(self.array, points)
         message(f'Found {len(self.points)} key points on image {self.imagename} using orb method')
         self.points = np.array([(i.pt[0], i.pt[1], i.size, i.angle) for i in self.points])
-        
+
         xs = self.points[:, 0].round().astype(int)
         ys = self.points[:, 1].round().astype(int)
         self.color = self.array[ys, xs]
 
     def save_label_channel(self):
-        '''Saves image's 4th channel i.e. labels'''
+        """Saves image's 4th channel i.e. labels"""
         cv.imwrite(f'{self.imagename}label.jpg', self.lchannel)

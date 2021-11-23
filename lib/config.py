@@ -1,8 +1,8 @@
-'''
+"""
 
 This file is the same file as the config.py from the OpenSfM software available at: https://github.com/mapillary/OpenSfM
 
-'''
+"""
 
 import os
 import yaml
