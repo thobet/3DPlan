@@ -19,16 +19,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 
-import cv2, imutils
-import numpy as np
-from lib.utils import mkdir, error_message
 from pathlib import Path
+
+import cv2
+import imutils
+import numpy as np
+
+from lib.utils import mkdir, error_message
 
 edge_parameters = {'minimum': 200, 'maximum': 300}
 gray = None
 
+
 class SFMImage:
-    '''
+    """
         Name SFMImage
 
         Description: SFMImage class constructs the images i.e. 4 channel images, which are used into SfM-MVS workflow.
@@ -43,10 +47,10 @@ class SFMImage:
 
         Functions:
             --- Setters ---
-            set_path:                Set the working directory. 
+            set_path:                Set the working directory.
             set_edgemethod:          Set the edgemethod.
             set_kernel:              Set the kernel's, which is used to blure the image, size.
-            set_blurmethod:          Set the blured method.       
+            set_blurmethod:          Set the blured method.
 
             --- Getters ---
             get_path:                Get the working directory.
@@ -67,21 +71,22 @@ class SFMImage:
             define_min:              Defines starting Canny min value.
             define_max:              Defines starting Canny max value.
             new_value:               Updates min and max values using user's input.
-            find_edges:              Executes locally the Canny algorithm and visualize the results. 
- 
+            find_edges:              Executes locally the Canny algorithm and visualize the results.
+
             The live Canny viewer implementation was inspired by Arapelis (Arapellis, O. 2020. Semiautomated edge detection on digital images. Postgraduate Degree Thesis, Postgraduate Course in Geoinformatics, NTUA (in Greek))
-    '''
-    
-    def __init__(self, path: str='', imname: str='', simages: bool=False, out='4D', blurmethod='', edgemethod = 'Canny'):
+    """
+
+    def __init__(self, path: str = '', imname: str = '', simages: bool = False, out='4D', blurmethod='',
+                 edgemethod='Canny'):
         # --- Image Variables ---
         self.imname = imname
-        self.out    = out
-        self.path   = Path(path)
-        self.image  = cv2.imread(f'{self.path}/rgb/{imname}', cv2.IMREAD_UNCHANGED)
-        self.shape  = self.image.shape
-        self.blue   = self.image[:,:,0]
-        self.green  = self.image[:,:,1]
-        self.red    = self.image[:,:,2]
+        self.out = out
+        self.path = Path(path)
+        self.image = cv2.imread(f'{self.path}/rgb/{imname}', cv2.IMREAD_UNCHANGED)
+        self.shape = self.image.shape
+        self.blue = self.image[:, :, 0]
+        self.green = self.image[:, :, 1]
+        self.red = self.image[:, :, 2]
         self.edgemethod = edgemethod
 
         # --- Set Labels Variables if semantic image exists---
@@ -90,63 +95,65 @@ class SFMImage:
             self.simage = cv2.imread(f'{self.path}/semantic_images/{self.siname}', cv2.IMREAD_UNCHANGED)
             if len(self.simage.shape) == 3:
                 if self.simage.shape[2] == 3:
-                    self.tchl   = True
-                    self.sblue  = self.simage[:,:,0]
-                    self.sgreen = self.simage[:,:,1]
-                    self.sred   = self.simage[:,:,2]
+                    self.tchl = True
+                    self.sblue = self.simage[:, :, 0]
+                    self.sgreen = self.simage[:, :, 1]
+                    self.sred = self.simage[:, :, 2]
                 else:
                     error_message('Please use a 1 channel or 3 channels annotated image', sysex=True)
-            else: self.tchl = False
+            else:
+                self.tchl = False
 
         # --- Blur Variables ---
         self.kernel = (51, 51)
         self.blurmethod = blurmethod
-        if self.blurmethod == 'GaussianBlur'and self.edgemethod == 'Canny':
+        if self.blurmethod == 'GaussianBlur' and self.edgemethod == 'Canny':
             self.bluredim = cv2.GaussianBlur(self.image, self.kernel, 0)
             self.bluredimname = f'{self.imname[:-4]}_b.jpg'
-        
+
         # --- Set labels Variables ---
         if edgemethod == 'Canny':
-            
+
             # --- Canny Parameters ---
             global edge_parameters, gray
             SFMImage.semiauto_edge_detection(self)
+            '''
             min_val = edge_parameters['minimum']
             max_val = edge_parameters['maximum']
-
+            '''
             if self.blurmethod != '':
                 self.gray = cv2.cvtColor(self.bluredim, cv2.COLOR_BGR2GRAY)
             else:
                 self.gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
-            
-            #self.labels = cv2.Canny(self.gray, min_val, max_val, 3)
+
+            # self.labels = cv2.Canny(self.gray, min_val, max_val, 3)
 
         elif edgemethod == 'Sematic_Info':
             self.labels = np.zeros_like(self.red, dtype=np.int)
 
         self.sfmchannels = np.zeros_like(self.image)
         self.sfmlname = f'{self.imname[:-4]}_l.jpg'
-        
+
         # --- Output Image ---
         if out == '4D':
-        	self.outname = f'{self.imname[:-4]}.tiff'
+            self.outname = f'{self.imname[:-4]}.tiff'
         else:
-        	self.outname = f'{self.imname[:-4]}.JPG'
-        
-        self.outim:  list = []        
+            self.outname = f'{self.imname[:-4]}.JPG'
+
+        self.outim: list = []
 
         # --- Pull the trigger ---
         if edgemethod == 'Canny':
-            #SFMImage.save_blur_image(self)
+            # SFMImage.save_blur_image(self)
             SFMImage.save_labels(self)
-        
+
         elif edgemethod == 'Sematic_Info':
             SFMImage.define_labels(self)
-            #SFMImage.save_labels(self)
-        
+            # SFMImage.save_labels(self)
+
         SFMImage.add_channel(self)
         SFMImage.save_output_image(self)
-    
+
     # --- Setters ---
     def set_path(self, path):
         self.path = path
@@ -184,47 +191,47 @@ class SFMImage:
 
     # --- Methods ---
     def save_blur_image(self):
-        '''This function saves the blurred image'''
+        """This function saves the blurred image"""
         mkdir('Blur_rgb')
         cv2.imwrite(f'{self.path}/Blur_rgb/{self.bluredimname}', self.bluredim)
 
     def save_labels(self):
-        '''This function saves the label channel'''
+        """This function saves the label channel"""
         mkdir('Labels')
         cv2.imwrite(f'{self.path}/Labels/{self.sfmlname}', self.labels)
-    
+
     def add_channel(self):
-        '''This function adds to the image the label channel'''
+        """This function adds to the image the label channel"""
         if self.out == '4D':
             self.outim = cv2.merge((self.blue, self.green, self.red, self.labels))
         elif self.out == '3D':
             self.outim = cv2.merge((self.blue, self.green, self.labels))
 
     def save_output_image(self):
-        '''This function saves th output image'''
+        """This function saves th output image"""
         mkdir('images')
         cv2.imwrite(f'{self.path}/images/{self.outname}', self.outim)
 
     def define_labels(self):
-        '''This function constructs the channel which will be added as the label channel'''
+        """This function constructs the channel which will be added as the label channel"""
         if self.tchl:
             self.labels = np.zeros_like(self.red)
-            for i in range (0, self.sred.shape[0]):
-                for j in range (0, self.sred.shape[1]):
+            for i in range(0, self.sred.shape[0]):
+                for j in range(0, self.sred.shape[1]):
                     r = self.sred[i, j]
-                    #g = self.sgreen[i, j] #Uncomment if the semantic information is in green color
-                    #b = self.sblue[i, j] #Uncomment if the semantic information is in blue color
+                    # g = self.sgreen[i, j] #Uncomment if the semantic information is in green color
+                    # b = self.sblue[i, j] #Uncomment if the semantic information is in blue color
                     if r > 253:
                         self.labels[i, j] = 255
-            SFMImage.save_labels(self) #Uncomment for debugging
+            SFMImage.save_labels(self)  # Uncomment for debugging
         else:
             self.labels = self.simage
 
     def semiauto_edge_detection(self):
-        '''This function semi automatic Canny implementation i.e. Canny with image viewer'''
+        """This function semi automatic Canny implementation i.e. Canny with image viewer"""
         global edge_parameters, gray
-        image = imutils.resize(self.image, height=self.shape[1]//10)
-        gray  = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        image = imutils.resize(self.image, height=self.shape[1] // 10)
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         cv2.namedWindow('MyImage')
         cv2.createTrackbar('Min', 'MyImage', edge_parameters['minimum'], 1200, SFMImage.define_min)
         cv2.createTrackbar('Max', 'MyImage', edge_parameters['maximum'], 1200, SFMImage.define_max)
@@ -236,22 +243,26 @@ class SFMImage:
                 cv2.destroyAllWindows()
                 break
 
+    @staticmethod
     def define_min(new_min):
-        '''This function defines starting Canny min value'''
+        """This function defines starting Canny min value"""
         SFMImage.new_value('minimum', new_min)
 
+    @staticmethod
     def define_max(new_max):
-        '''This function defines starting Canny max value.'''
+        """This function defines starting Canny max value."""
         SFMImage.new_value('maximum', new_max)
 
+    @staticmethod
     def new_value(parameter, new_value):
-        '''This function updates min and max values using user's input.'''
+        """This function updates min and max values using user's input."""
         global edge_parameters
         edge_parameters[parameter] = new_value
         SFMImage.find_edges()
 
+    @staticmethod
     def find_edges():
-        '''This function executes locally the Canny algorithm and visualize the results'''
+        """This function executes locally the Canny algorithm and visualize the results"""
         global edge_parameters, gray, edges
         edges = cv2.Canny(gray, edge_parameters['minimum'], edge_parameters['maximum'], 3)
         cv2.imshow('Edges', imutils.resize(edges, edges.shape[1]))
