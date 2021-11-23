@@ -27,7 +27,7 @@ import os
 from lib.utils import *
 
 
-class MetaSFM():
+class MetaSFM:
     """
         Name: MetaSFM
 
