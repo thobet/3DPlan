@@ -101,19 +101,19 @@ class Image:
         self.camera_matrix: list = []
 
         # --- Pull the trigger ---
-        Image.camera_matrix()
+        Image.camera_matrix(self)
 
         if method == 'Akaze':
-            Image.akaze()
+            Image.akaze(self)
 
         if method == 'Sift':
-            Image.sift()
+            Image.sift(self)
 
         if method == 'Surf':
-            Image.surf()
+            Image.surf(self)
 
         if method == 'ORB':
-            Image.orb()
+            Image.orb(self)
 
     # --- Setters ---
     def set_imagename(self, name):
@@ -183,10 +183,11 @@ class Image:
 
         exif = {ExifTags.TAGS[k]: v for k, v in image._getexif().items() if k in ExifTags.TAGS}
 
-        # print (exif)
-        self.focal = [exif.get('FocalLength')][0][0]
-        self.width = [exif.get('ExifImageWidth')][0]
-        self.height = [exif.get('ExifImageHeight')][0]
+        # print (exif) # Uncomment for Debugging.
+        print(exif.get('FocalLength'))  # Uncomment for Debugging.
+        self.focal = exif.get('FocalLength')
+        self.width = exif.get('ExifImageWidth')
+        self.height = exif.get('ExifImageHeight')
         self.camera_model = exif.get('Model ')
 
         if self.camera_model == 'Canon EOS 6D':
@@ -200,7 +201,7 @@ class Image:
 
     def camera_matrix(self):
         """Calculates the camera matrix"""
-        Image.image_exif('.JPG')
+        Image.image_exif(self, '.JPG')
 
         camera_matrix = [[self.focal, 0, self.principal_point[0]],
                          [0, self.focal, self.principal_point[1]],

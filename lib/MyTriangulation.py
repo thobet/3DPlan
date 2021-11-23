@@ -321,8 +321,7 @@ class Triang:
         self.ptsL = np.int32(self.ptsL)  # Convert ptsL to int for the fundamental calculation.
         self.ptsR = np.int32(self.ptsR)
 
-        self.essential_matrix, mask = cv.findEssentialMat(self.ptsL, self.ptsR, self.camera_matrix,
-                                                          cv.LMEDS)  # Calculate essential matrix (Known camera intrinsics parameters).
+        self.essential_matrix, mask = cv.findEssentialMat(self.ptsL, self.ptsR, self.camera_matrix, cv.LMEDS)  # Calculate essential matrix (Known camera intrinsics parameters).
 
         self.ptsL = self.ptsL[
             mask.ravel() == 1]  # Keep only the points which are used for the essential matrix calculation.
