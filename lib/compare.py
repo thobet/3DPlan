@@ -19,9 +19,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 This program is used to evaluate the enrichment of the RGB images with the label channels.
-First enabling the saving function of the labels, into the 3DPlan algorithm (SemanticPass.py, "save_labels" function).
-Then copy the labels, the four-channel images and the compare.py script, into a new directory.
-Run the script.
+First enabling the function "save_labels", into the SemanticPass.py script.
+Run the 3DPlan.py script.
+Then copy the label images (Labels folder), the four-channel images (images folder) and the compare.py script (lib folder), into a new directory.
+Run the compare.py script.
 
 """
 
