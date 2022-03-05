@@ -198,7 +198,7 @@ class SFMImage:
     def save_labels(self):
         """This function saves the label channel"""
         mkdir('Labels')
-        cv2.imwrite(f'{self.path}/Labels/{self.sfmlname}', self.labels)
+        cv2.imwrite(f'{self.path}/Labels/{self.sfmlname[-5]}.tiff', self.labels)
 
     def add_channel(self):
         """This function adds to the image the label channel"""
