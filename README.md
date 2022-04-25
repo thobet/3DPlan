@@ -25,7 +25,7 @@ opencv-python == 3.4.8.29 <br>
 dxf == 1.1.1 <br>
 pathlib == 1.0.1 <br>
 imutils == 0.5.3 <br>
-metashape == 0.0.4 (Optional for the approach numb. 3) <br>
+metashape == 0.0.4 <br>
 Pillow == 7.0.0 <br>
 sklearn == 0.0 <br>
 scikit-image == 0.17.2 <br>
